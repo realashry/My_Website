@@ -9,11 +9,10 @@
 }
 
 body {
-    background-color: black;
+    background-color: #000016;
     color: #fff;
 }
 
-/* Header */
 header {
     background-color: black;
     width: 100%;
@@ -49,7 +48,7 @@ section {
     padding: 100px 200px;
 }
 
-/* Main */
+/* Main Hero Section */
 .main {
     width: 100%;
     min-height: 100vh;
@@ -107,7 +106,11 @@ section {
     color: #ffff;
     font-size: 2.5em;
     padding-right: 35px;
-    transition: 0.3s ease;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #24a0d1; /* Changed from transform scale to color change to prevent layout shifts */
 }
 
 .title {
@@ -117,10 +120,8 @@ section {
     font-size: 2.2em;
     font-weight: 800;
     margin-bottom: 30px;
-    padding-top: 50px; /* Adds space from previous section */
 }
 
-/* Roles Cards */
 .content {
     display: flex;
     justify-content: center;
@@ -128,6 +129,7 @@ section {
     flex-wrap: wrap;
 }
 
+/* Roles Cards */
 .card {
     background-color: #ffff;
     width: 21.25em;
@@ -136,7 +138,6 @@ section {
     padding: 25px;
     margin: 15px;
     transition: 0.7s ease;
-    color: #111;
 }
 
 .card:hover {
@@ -160,7 +161,7 @@ section {
     margin: 10px;
 }
 
-/* Projects */
+/* Experience/Projects Section */
 .projects {
     background-color: #000016;
 }
@@ -219,22 +220,21 @@ section {
 }
 
 /* ============================================
-   CONTACT SECTION (Fix fully consolidated)
+   ENHANCED CONTACT SECTION
    ============================================ */
-.contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.subtitle {
-    color: #a0a0a0;
-    font-size: 1.1rem;
-    margin-bottom: 50px;
+.contact-section {
+    background-color: #000; /* Black background for contrast */
     text-align: center;
 }
 
-.cards-wrapper {
+.contact-subtitle {
+    color: #a0a0a0;
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+    margin-top: -20px;
+}
+
+.contact-wrapper {
     display: flex;
     gap: 20px;
     justify-content: center;
@@ -261,7 +261,7 @@ section {
 
 .contact-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.15);
 }
 
 .contact-card:hover .arrow {
@@ -330,7 +330,7 @@ section {
     padding: 2em;
     display: flex;
     justify-content: center;
-    width: 100%;
+    border-top: 1px solid #1a1a1a;
 }
 
 .footer .social-icons a {
@@ -342,28 +342,60 @@ section {
 .footer .social-icons a:nth-child(2):hover { color: #fff; }
 .footer .social-icons a:nth-child(3):hover { color: #E4405F; }
 
-/* Responsive */
-@media (max-width: 1023px) {
-    header { padding: 12px 20px; }
-    .navigation a { padding-left: 10px; }
-    .title { font-size: 1.8em; }
-    section { padding: 80px 20px; }
-    .main h2 { font-size: 1em; }
-    .main h3 { font-size: 1.6em; }
-    .content { flex-direction: column; align-items: center; }
+/* ============================================
+   RESPONSIVE DESIGN (Fixed to prevent stacking)
+   ============================================ */
+@media (max-width:1023px) {
+    header {
+        padding: 12px 20px;
+    }
+    .navigation a {
+        padding-left: 10px;
+    }
+    .title {
+        font-size: 1.8em;
+    }
+    section {
+        padding: 80px 20px;
+    }
+    .main h2 {
+        font-size: 1em;
+    }
+    .main h3 {
+        font-size: 1.6em;
+    }
+    .content {
+        flex-direction: row; /* Kept as row, wrap allows them to drop naturally */
+    }
 }
 
-@media (max-width: 767px) {
-    .logo { font-size: 14px; }
-    .main h2 span { font-size: 15px; }
-    .main h3 { font-size: 1em; }
-    .main-btn { font-size: 1em; }
-    .social-icons a { font-size: 2em; }
-    .cards-wrapper { flex-direction: column; align-items: center; }
-    .contact-card { width: 100%; }
-    .project-card { width: 100%; }
+@media (max-width:767px) {
+    .logo {
+        font-size: 14px;
+    }
+    .main h2 span {
+        font-size: 15px;
+    }
+    .main h3 {
+        font-size: 1em;
+    }
+    .main-btn {
+        font-size: 1em;
+    }
+    .social-icons a {
+        font-size: 2em;
+    }
+    .contact-wrapper {
+        flex-direction: column; /* Only stack the contact cards on mobile */
+        align-items: center;
+    }
+    .contact-card {
+        width: 100%;
+    }
 }
 
-@media (max-width: 300px) {
-    body { font-size: 10px; }
+@media (max-width:300px) {
+    body {
+        font-size: 10px;
+    }
 }
