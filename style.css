@@ -302,6 +302,9 @@ h1 {
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 /* Hover effects */
@@ -314,17 +317,33 @@ h1 {
     transform: translateX(5px);
 }
 
-.card:hover .icon {
-    transform: scale(1.1);
+.card:hover .icon-container {
+    transform: scale(1.05);
 }
 
-/* Icon Styling (Fixed sizing) */
-.icon {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
+/* Icon Styling (Crash-proof) */
+.icon-container {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 20px;
     transition: transform 0.3s ease;
+}
+
+.icon-container i {
+    font-size: 32px; /* Controls icon size perfectly */
+    color: white;
+}
+
+.whatsapp-bg {
+    background-color: #25D366; /* Official WhatsApp Green */
+}
+
+.gmail-bg {
+    background-color: #EA4335; /* Official Gmail Red */
 }
 
 /* Text Styling */
@@ -354,6 +373,18 @@ h1 {
     display: inline-block;
     color: #111;
     transition: transform 0.3s ease;
+    align-self: flex-end; /* Aligns arrow nicely to the right */
+}
+
+/* Responsive sizing errors fix */
+@media (max-width: 900px) {
+    .cards-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        width: 100%;
+    }
 }
 
 /* Responsive sizing errors fix */
