@@ -246,16 +246,88 @@ section {
     color: #601cfc;
 }
 
-.contact .icon{
-    font-size: 4.5em;
+/* Contact Cards - Clickable with Hover Effects */
+.contact-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 20px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 5px 25px rgba(1, 1, 1, 0.15);
+    position: relative;
+    overflow: hidden;
+    min-width: 250px;
+    flex: 1;
 }
 
-.contact .info h3 {
-    color: #000;
+/* Hover Effect - Lift & Shadow */
+.contact-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(1, 1, 1, 0.25);
 }
 
-.contact .info p {
-    font-size: 1.5em;
+/* WhatsApp Card Specific Hover */
+.contact-card:first-child:hover .icon i {
+    color: #25D366;
+    transform: scale(1.3) rotate(-10deg);
+}
+
+/* Email Card Specific Hover */
+.contact-card:last-child:hover .icon i {
+    color: #D44638;
+    transform: scale(1.3) rotate(10deg);
+}
+
+/* Icon Styling Inside Contact Cards */
+.contact-card .icon i {
+    font-size: 3.5em;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: inline-block;
+}
+
+/* Glow Effect on Hover */
+.contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: all 0.6s ease;
+}
+
+.contact-card:hover::before {
+    left: 100%;
+}
+
+/* Text Hover Effects */
+.contact-card:hover .info h3 {
+    color: #24a0d1;
+    transition: color 0.3s ease;
+}
+
+.contact-card:first-child:hover .info h3 {
+    color: #25D366;
+}
+
+.contact-card:last-child:hover .info h3 {
+    color: #D44638;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 641px) {
+    .contact-card {
+        min-width: 100%;
+        margin: 10px 0;
+    }
+    
+    .contact-card .icon i {
+        font-size: 2.8em;
+    }
 }
 
 .footer {
