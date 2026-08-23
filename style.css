@@ -348,32 +348,6 @@ section {
     transition: transform 0.3s ease;
     align-self: flex-end;
 }
-/* Footer Social Icons - Centered */
-.footer .social-icons {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center;
-    gap: 30px;
-    width: 100%;
-}
-
-.footer .social-icons a {
-    font-size: 28px;
-    color: #fff;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.footer .social-icons a:hover {
-    transform: scale(1.2);
-}
-
-.footer .social-icons a:nth-child(1):hover { color: #0077b5; }
-.footer .social-icons a:nth-child(2):hover { color: #fff; }
-.footer .social-icons a:nth-child(3):hover { color: #E4405F; }
 
 /* ============================================
    RESPONSIVE DESIGN
@@ -434,3 +408,11 @@ section {
         font-size: 10px;
     }
 }
+
+.footer .social-icons a:hover {
+    transform: scale(1.2) !important;
+}
+
+.social-icons a:nth-child(1):hover { color: #0077b5 !important; }
+.social-icons a:nth-child(2):hover { color: #fff !important; }
+.social-icons a:nth-child(3):hover { color: #E4405F !important; }
