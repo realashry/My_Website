@@ -223,10 +223,15 @@ section {
    FIXED CONTACT SECTION
    ============================================ */
 
+/* ============================================
+   FIXED CONTACT SECTION
+   ============================================ */
+
 /* Override global section padding to center this properly */
 .contact-section {
-    padding: 100px 20px; /* Reduced horizontal padding for better centering */
-    background-color: #000;
+    padding: 100px 20px; 
+    /* CHANGED: Using #000016 to match the Experience section */
+    background-color: #000016; 
     text-align: center;
 }
 
@@ -348,7 +353,6 @@ section {
     transition: transform 0.3s ease;
     align-self: flex-end;
 }
-
 /* Footer */
 .footer {
     background-color: #000016;
