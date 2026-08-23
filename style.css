@@ -220,18 +220,13 @@ section {
 }
 
 /* ============================================
-   FIXED CONTACT SECTION
-   ============================================ */
-
-/* ============================================
-   FIXED CONTACT SECTION
+   CONTACT SECTION (Previous working version)
    ============================================ */
 
 /* Override global section padding to center this properly */
 .contact-section {
-    padding: 100px 20px; 
-    /* CHANGED: Using #000016 to match the Experience section */
-    background-color: #000016; 
+    padding: 100px 20px; /* Reduced horizontal padding for better centering */
+    background-color: #000016; /* CHANGED: Was #000, now matches Experience section */
     text-align: center;
 }
 
