@@ -110,7 +110,7 @@ section {
 }
 
 .social-icons a:hover {
-    color: #24a0d1; /* Changed from transform scale to color change to prevent layout shifts */
+    color: #24a0d1; 
 }
 
 .title {
@@ -220,25 +220,38 @@ section {
 }
 
 /* ============================================
-   ENHANCED CONTACT SECTION
+   FIXED CONTACT SECTION
    ============================================ */
+
+/* Override global section padding to center this properly */
 .contact-section {
-    background-color: #000; /* Black background for contrast */
+    padding: 100px 20px; /* Reduced horizontal padding for better centering */
+    background-color: #000;
     text-align: center;
+}
+
+.contact-title {
+    color: #ffff;
+    font-size: 2.2em;
+    font-weight: 800;
+    margin-bottom: 15px;
 }
 
 .contact-subtitle {
     color: #a0a0a0;
     font-size: 1.1rem;
     margin-bottom: 50px;
-    margin-top: -20px;
 }
 
+/* Force Cards Side-by-Side */
 .contact-wrapper {
     display: flex;
-    gap: 20px;
+    flex-direction: row; /* Ensures they are side by side */
+    flex-wrap: wrap; /* Wraps on smaller screens */
     justify-content: center;
-    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .contact-card {
@@ -268,11 +281,14 @@ section {
     transform: translateX(5px);
 }
 
-.contact-card:hover .icon-container {
-    transform: scale(1.05);
+/* Icon Wrapper & Hover Effects */
+.icon-wrapper {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Contact Icons */
 .icon-container {
     width: 60px;
     height: 60px;
@@ -280,27 +296,37 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
     flex-shrink: 0;
 }
 
 .icon-container i {
     font-size: 32px; 
     color: white;
+    transition: transform 0.4s ease;
 }
 
 .whatsapp-bg { background-color: #25D366; }
 .gmail-bg { background-color: #EA4335; }
 
-/* Contact Text */
+/* Enhanced Icon Hover Effect */
+.contact-card:hover .icon-container {
+    transform: scale(1.1) rotate(-5deg); /* Lifts and slightly rotates */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.contact-card:hover .icon-container i {
+    transform: scale(1.1); /* Icon itself gets slightly bigger */
+}
+
+/* Text Alignments */
 .contact-card h3 {
     font-size: 1.5rem;
     margin: 0 0 5px 0;
     font-weight: 600;
 }
 
-.contact-card p {
+.contact-card .contact-info {
     font-size: 1.1rem;
     color: #444;
     margin: 0;
@@ -343,7 +369,7 @@ section {
 .footer .social-icons a:nth-child(3):hover { color: #E4405F; }
 
 /* ============================================
-   RESPONSIVE DESIGN (Fixed to prevent stacking)
+   RESPONSIVE DESIGN
    ============================================ */
 @media (max-width:1023px) {
     header {
@@ -365,7 +391,7 @@ section {
         font-size: 1.6em;
     }
     .content {
-        flex-direction: row; /* Kept as row, wrap allows them to drop naturally */
+        flex-direction: row; 
     }
 }
 
@@ -385,8 +411,10 @@ section {
     .social-icons a {
         font-size: 2em;
     }
+    
+    /* Only stack contact cards on mobile */
     .contact-wrapper {
-        flex-direction: column; /* Only stack the contact cards on mobile */
+        flex-direction: column; 
         align-items: center;
     }
     .contact-card {
