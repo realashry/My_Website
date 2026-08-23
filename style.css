@@ -13,15 +13,17 @@ body {
     color: #fff;
 }
 
+/* Base: Mobile Styles */
 header {
     background-color: black;
     width: 100%;
     position: fixed;
     z-index: 999;
     display: flex;
+    flex-wrap: wrap; /* Wraps logo and nav on tiny screens */
     justify-content: space-between;
     align-items: center;
-    padding: 10px 200px;
+    padding: 15px 20px;
 }
 
 .logo {
@@ -29,15 +31,19 @@ header {
     color: #ffff;
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 1.8em;
+    font-size: 1.4em;
+}
+
+.navigation {
+    display: flex;
+    gap: 15px;
 }
 
 .navigation a {
     color: #ffff;
     text-decoration: none;
-    font-size: 1.1em;
+    font-size: 0.95em;
     font-weight: 500;
-    padding-left: 30px;
 }
 
 .navigation a:hover {
@@ -45,10 +51,10 @@ header {
 }
 
 section {
-    padding: 100px 200px;
+    padding: 80px 20px;
 }
 
-/* Main Hero Section */
+/* Main Hero */
 .main {
     width: 100%;
     min-height: 100vh;
@@ -57,12 +63,12 @@ section {
     background: url("bg.png") no-repeat;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: scroll; /* Better performance on mobile */
 }
 
 .main h2 {
     color: #fff;
-    font-size: 1.6em;
+    font-size: 1.2em;
     font-weight: 600;
 }
 
@@ -70,13 +76,13 @@ section {
     display: inline-block;
     margin-top: 10px;
     color: #ffff;
-    font-size: 35px;
+    font-size: 20px;
     font-weight: 600;
 }
 
 .main h3 {
     color: #fff;
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: 700;
     letter-spacing: 1px;
     margin-top: 10px;
@@ -87,7 +93,7 @@ section {
     color: #fff;
     background-color: #24a0d1;
     text-decoration: none;
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: 600;
     display: inline-block;
     padding: 0.9375em 2.1875em;
@@ -104,8 +110,8 @@ section {
 
 .social-icons a {
     color: #ffff;
-    font-size: 2.5em;
-    padding-right: 35px;
+    font-size: 2em;
+    padding-right: 20px;
     transition: 0.3s;
 }
 
@@ -117,27 +123,29 @@ section {
     display: flex;
     justify-content: center;
     color: #ffff;
-    font-size: 2.2em;
+    font-size: 1.8em;
     font-weight: 800;
     margin-bottom: 30px;
 }
 
-/* Roles & Projects Content Layout */
+/* Content Layout: Column by Default (Mobile) */
 .content {
     display: flex;
     justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
     flex-wrap: wrap;
 }
 
-/* Roles Cards */
+/* Roles Cards (Full width on mobile) */
 .card {
     background-color: #ffff;
-    width: 21.25em;
+    width: 100%;
+    max-width: 400px;
     box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
     border-radius: 10px;
     padding: 25px;
-    margin: 15px;
+    margin: 15px 0;
     transition: 0.7s ease;
     text-align: center;
     display: block; 
@@ -171,7 +179,7 @@ section {
     visibility: visible;
 }
 
-/* Experience/Projects Section */
+/* Experience/Projects (Full width on mobile) */
 .projects {
     background-color: #000016;
 }
@@ -183,10 +191,11 @@ section {
 .project-card {
     background-color: #fff;
     min-height: 14em;
-    width: 23em;
+    width: 100%;
+    max-width: 400px;
     overflow: hidden;
     border-radius: 10px;
-    margin: 20px;
+    margin: 20px 0;
     transition: 0.7s ease;
     display: flex;
     flex-direction: column;
@@ -201,7 +210,7 @@ section {
 }
 
 .project-image {
-    height: 200px; /* Fixed height so image doesn't push text away */
+    height: 200px;
     width: 100%;
     overflow: hidden;
     display: flex;
@@ -213,7 +222,7 @@ section {
 .project-image img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Ensures logo fits perfectly inside */
+    object-fit: contain; 
     display: block;
 }
 
@@ -249,36 +258,31 @@ section {
     color: #601cfc;
 }
 
-/* ============================================
-   CONTACT SECTION
-   ============================================ */
+/* Contact Section (Column by Default) */
 .contact-section {
-    padding: 100px 20px;
+    padding: 80px 20px;
     background-color: #000016;
     text-align: center;
 }
 
 .contact-title {
     color: #ffff;
-    font-size: 2.2em;
+    font-size: 1.8em;
     font-weight: 800;
     margin-bottom: 15px;
 }
 
 .contact-subtitle {
     color: #a0a0a0;
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-bottom: 50px;
 }
 
 .contact-wrapper {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     gap: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
 }
 
 .contact-card {
@@ -286,8 +290,8 @@ section {
     color: #111;
     border-radius: 20px;
     padding: 30px;
-    width: 400px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 400px;
     text-align: left;
     text-decoration: none;
     position: relative;
@@ -374,14 +378,12 @@ section {
     align-self: flex-end;
 }
 
-/* ============================================
-   FOOTER (BLACK BACKGROUND, CENTERED, BRAND COLORS)
-   ============================================ */
+/* Footer */
 .footer {
-    background-color: black; /* STRICTLY BLACK */
-    padding: 40px 0;
+    background-color: black;
+    padding: 40px 20px;
     display: flex;
-    justify-content: center; /* Centered horizontally */
+    justify-content: center;
     align-items: center;
     width: 100%;
 }
@@ -389,7 +391,7 @@ section {
 .footer .social-icons {
     display: flex;
     justify-content: center; 
-    gap: 30px;
+    gap: 25px;
 }
 
 .footer .social-icons a {
@@ -399,67 +401,93 @@ section {
     display: inline-block;
 }
 
-/* Footer Hover Effects */
 .footer .social-icons a:hover {
     transform: translateY(-5px) scale(1.2);
 }
 
-/* Official Brand Colors for Footer Icons */
-.footer .social-icons a:nth-child(1):hover { color: #0077b5; } /* LinkedIn Blue */
-.footer .social-icons a:nth-child(2):hover { color: #fff; }     /* GitHub White */
-.footer .social-icons a:nth-child(3):hover { color: #E4405F; }  /* Instagram Pink */
+.footer .social-icons a:nth-child(1):hover { color: #0077b5; }
+.footer .social-icons a:nth-child(2):hover { color: #fff; }
+.footer .social-icons a:nth-child(3):hover { color: #E4405F; }
 
-/* ============================================
-   RESPONSIVE DESIGN
-   ============================================ */
-@media (max-width:1023px) {
+
+/* ==========================================
+   TABLET AND DESKTOP (min-width queries)
+   ========================================== */
+
+/* Tablet (> 640px) */
+@media (min-width: 640px) {
     header {
-        padding: 12px 20px;
-    }
-    .navigation a {
-        padding-left: 10px;
-    }
-    .title {
-        font-size: 1.8em;
+        padding: 12px 40px;
     }
     section {
-        padding: 80px 20px;
+        padding: 80px 40px;
+    }
+    
+    .content {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+/* Desktop (> 1024px) */
+@media (min-width: 1024px) {
+    header {
+        padding: 10px 200px;
+    }
+    section {
+        padding: 100px 200px;
+    }
+    
+    .main {
+        background-attachment: fixed;
     }
     .main h2 {
-        font-size: 1em;
-    }
-    .main h3 {
         font-size: 1.6em;
     }
-}
-
-@media (max-width:767px) {
-    .logo {
-        font-size: 14px;
-    }
     .main h2 span {
-        font-size: 15px;
+        font-size: 35px;
     }
     .main h3 {
-        font-size: 1em;
+        font-size: 1.5em;
     }
     .main-btn {
-        font-size: 1em;
+        font-size: 1.1em;
     }
     .social-icons a {
-        font-size: 2em;
+        font-size: 2.5em;
+        padding-right: 35px;
     }
+    .title {
+        font-size: 2.2em;
+    }
+    .contact-title {
+        font-size: 2.2em;
+    }
+    .contact-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    /* Set rigid widths for larger screens */
+    .card {
+        width: 21.25em;
+        margin: 15px;
+        max-width: none;
+    }
+    .project-card {
+        width: 23em;
+        margin: 20px;
+        max-width: none;
+    }
+    
     .contact-wrapper {
-        flex-direction: column; 
-        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 1000px;
+        margin: 0 auto;
     }
     .contact-card {
-        width: 100%;
-    }
-}
-
-@media (max-width:300px) {
-    body {
-        font-size: 10px;
+        width: 400px;
+        max-width: none;
     }
 }
