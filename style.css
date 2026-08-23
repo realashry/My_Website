@@ -348,19 +348,27 @@ section {
     transition: transform 0.3s ease;
     align-self: flex-end;
 }
-/* Footer */
-.footer {
-    background-color: #000016;
-    color: #fff;
-    padding: 2em;
-    display: flex;
-    justify-content: center;
-    border-top: 1px solid #1a1a1a;
+/* Footer Social Icons - Centered */
+.footer .social-icons {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
 }
 
 .footer .social-icons a {
-    font-size: 1.6em;
-    padding: 0 12px;
+    font-size: 28px;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer .social-icons a:hover {
+    transform: scale(1.2);
 }
 
 .footer .social-icons a:nth-child(1):hover { color: #0077b5; }
